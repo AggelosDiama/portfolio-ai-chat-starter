@@ -6,7 +6,7 @@ const supabase = createClient(
 );
 
 const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
-const MODEL = "llama-3.1-8b-instant";
+const MODEL = "llama-3.3-70b-versatile";
 
 const SYSTEM_PROMPT = `You are an AI assistant for this specific UX portfolio.
 Only answer based on the portfolio knowledge base provided below.
