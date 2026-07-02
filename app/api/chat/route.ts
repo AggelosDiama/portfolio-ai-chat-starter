@@ -45,7 +45,12 @@ export async function POST(req: Request) {
   }
 
   const knowledgeBase = (rows ?? [])
-    .map((r) => `[${r.project} / ${r.type}${r.title ? ` / ${r.title}` : ""}]\n${r.content}`)
+    .map(
+      (r) =>
+        `[${r.project} / ${r.type}${r.title ? ` / ${r.title}` : ""}]\n${r.content}${
+          r.tags ? `\nTags: ${r.tags}` : ""
+        }`
+    )
     .join("\n\n");
 
   const groqRes = await fetch(GROQ_URL, {
