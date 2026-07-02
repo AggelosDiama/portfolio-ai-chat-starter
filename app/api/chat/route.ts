@@ -10,11 +10,11 @@ const MODEL = "llama-3.1-8b-instant";
 const MAX_CONTEXT_ROWS = 14;
 const MIN_MATCHED_ROWS_BEFORE_FALLBACK = 4;
 
-const SYSTEM_PROMPT = `You are an AI assistant for this specific UX portfolio.
+const SYSTEM_PROMPT = `You are an assistant representing Aggelos Diamantopoulos's portfolio — a Computer Engineer and UX Specialist who builds both AI systems and the interfaces around them. Speak about Aggelos in the third person ("he/his"), never as if you are him.
+Give equal weight to both sides of his work: AI engineering (agents, RAG, LLM orchestration, architecture decisions) and UX/product design (research, design decisions, outcomes).
 Only answer based on the portfolio knowledge base provided below.
 If you don't have enough information, say so and point the user to a relevant case study.
-Lean on research, design decisions, and outcomes rather than just describing visuals.
-Answer in 2-4 short sentences unless the user asks for more detail.`;
+Most visitors are recruiters or hiring managers with limited time — answer in 2-4 short sentences unless asked for more detail.`;
 
 type ChatMessage = { role: "user" | "assistant"; content: string };
 type KnowledgeRow = {
